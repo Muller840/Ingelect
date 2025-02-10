@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingelect Gestión</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="sidebar">
+        <button class="tab-link" data-tab="inicio" onclick="openTab(event, 'inicio')"><i class="fas fa-home"></i> Inicio</button>
+        <button class="tab-link" data-tab="clientes" onclick="openTab(event, 'clientes')"><i class="fas fa-user"></i> Nuevo Cliente</button>
+        <button class="tab-link" data-tab="registro" onclick="openTab(event, 'registro')"><i class="fas fa-database"></i> Clientes</button>
+        <button class="tab-link" data-tab="trabajos" onclick="openTab(event, 'trabajos')"><i class="fas fa-calendar-alt"></i> Agendar Trabajos</button>
+        <button class="tab-link" data-tab="pedidos" onclick="openTab(event, 'pedidos')"><i class="fas fa-tasks"></i> Gestionar Pedidos</button>
+    </div>
+    <div class="content">
+        <div id="inicio" class="tab-content">
+            <h1>Bienvenido a Ingelect</h1>
+            <p>Empresa de ingeniería especializada en mantenimiento y fabricación de máquinas. Expertos en sistemas de frío y trabajos de mantenimiento de barcos remolcadores de contenedores.</p>
+            <div class="image-row">
+                <img src="https://agendarweb.com.ar/wp-content/uploads/2020/06/barcazas-en-hidrov%C3%ADa.jpg" alt="Imagen">
+            </div>
+        </div>
+        <div id="clientes" class="tab-content">
+            <h2>Registrar Cliente</h2>
+            <form id="clientForm">
+                <input type="text" id="clientName" placeholder="Nombre del Cliente" required>
+                <input type="tel" id="clientPhone" placeholder="Teléfono" required>
+                <input type="text" id="clientId" placeholder="CI o RUC" required>
+                <button type="submit">Registrar</button>
+            </form>
+        </div>
+        <div id="registro" class="tab-content">
+            <h2>Clientes Registrados</h2>
+            <ul id="clientList"></ul>
+        </div>
+        <div id="trabajos" class="tab-content">
+            <h2>Agendar Trabajos</h2>
+            <form id="scheduleForm">
+                <input type="text" id="workDescription" placeholder="Descripción del Trabajo" required>
+                <input type="date" id="workDate" required>
+                <select id="clientSelect" required></select>
+                <button type="submit">Agendar</button>
+            </form>
+        </div>
+        <div id="pedidos" class="tab-content">
+            <h2>Gestionar Pedidos</h2>
+            <h2>Trabajos Agendados</h2>
+            <ul id="workList"></ul>
+            <h2>Pedidos Completados</h2>
+            <ul id="completedOrders"></ul>
+            <h2>Estado de Pedidos</h2>
+            <form id="orderStatusForm">
+                <select id="orderStatus" required>
+                    <option value="Nuevo">Nuevo</option>
+                    <option value="Pendiente">Pendiente</option>
+                    <option value="Completado">Completado</option>
+                </select>
+                <button type="submit">Actualizar Estado</button>
+            </form>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

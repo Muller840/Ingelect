@@ -1,0 +1,69 @@
+document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.tab-link').forEach(function (tabLink) {
+        tabLink.addEventListener('click', function (event) {
+            openTab(event, event.target.getAttribute('data-tab'));
+        });
+    });
+
+    document.getElementById('clientForm').addEventListener('submit', function (event) {
+        event.preventDefault();
+        registerClient();
+    });
+
+    document.getElementById('scheduleForm').addEventListener('submit', function (event) {
+        event.preventDefault();
+        scheduleWork();
+    });
+
+    loadClients();
+    loadWorkSchedule();
+    openTab(null, 'inicio'); // Abrir la pestaña de inicio al cargar la página
+});
+
+function openTab(event, tabName) {
+    document.querySelectorAll('.tab-content').forEach(function (tabContent) {
+        tabContent.style.display = 'none';
+    });
+
+    document.getElementById(tabName).style.display = 'block';
+}
+
+function registerClient() {
+    const name = document.getElementById('clientName').value;
+    const phone = document.getElementById('clientPhone').value;
+    const id = document.getElementById('clientId').value;
+
+    const clientList = document.getElementById('clientList');
+    const clientItem = document.createElement('li');
+    clientItem.textContent = `Teléfono: ${phone}, CI/RUC: ${id}`;
+    clientList.appendChild(clientItem);
+
+    const clientSelect = document.getElementById('clientSelect');
+    const option = document.createElement('option');
+    option.value = name;
+    option.textContent = name;
+    clientSelect.appendChild(option);
+
+    document.getElementById('clientForm').reset();
+}
+
+function scheduleWork() {
+    const description = document.getElementById('workDescription').value;
+    const date = document.getElementById('workDate').value;
+    const client = document.getElementById('clientSelect').value;
+
+    const workList = document.getElementById('workList');
+    const workItem = document.createElement('li');
+    workItem.textContent = `Descripción: ${description}, Fecha: ${date}, Cliente: ${client}`;
+    workList.appendChild(workItem);
+
+    document.getElementById('scheduleForm').reset();
+}
+
+function loadClients() {
+    // Esta función se puede usar para cargar clientes previamente registrados desde una fuente de datos
+}
+
+function loadWorkSchedule() {
+    // Esta función se puede usar para cargar trabajos previamente agendados desde una fuente de datos
+}
