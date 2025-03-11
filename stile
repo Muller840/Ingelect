@@ -1,6 +1,6 @@
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: white; /* Fondo blanco */
+    background-color: #f0f0f0; /* Fondo blanco */
     margin: 0;
     display: flex;
 }
@@ -13,6 +13,7 @@ body {
     flex-direction: column;
     position: fixed;
     height: 100%;
+    padding-top: 20px;
 }
 
 .sidebar button {
@@ -23,6 +24,7 @@ body {
     text-align: left;
     width: 100%;
     cursor: pointer;
+    font-size: 16px;
 }
 
 .sidebar button:hover {
@@ -33,6 +35,7 @@ body {
     margin-left: 200px;
     padding: 20px;
     width: calc(100% - 200px);
+    background-color: #e0f7fa; /* Fondo azul claro */
 }
 
 .tab-content {
@@ -46,4 +49,38 @@ body {
 .image-row img {
     width: 100%;
     height: auto;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form input, form select, form button {
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+form button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #0056b3;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    background-color: white;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
 }
