@@ -21,7 +21,7 @@
             <h1>Bienvenido a Ingelect</h1>
             <p>Empresa de ingeniería especializada en mantenimiento y fabricación de máquinas. Expertos en sistemas de frío y trabajos de mantenimiento de barcos remolcadores de contenedores.</p>
             <div class="image-row">
-                <img src="https://agendarweb.com.ar/wp-content/uploads/2020/06/barcazas-en-hidrov%C3%ADa.jpg" alt="Imagen">
+                <img src="https://github.com/Muller840/Ingelect/blob/main/Captura%20de%20pantalla%202025-03-11%20091131.png?raw=true" alt="Captura de pantalla 2025-03-11 091131">
             </div>
         </div>
         <div id="clientes" class="tab-content">
@@ -42,25 +42,17 @@
             <form id="scheduleForm">
                 <input type="text" id="workDescription" placeholder="Descripción del Trabajo" required>
                 <input type="date" id="workDate" required>
-                <select id="clientSelect" required></select>
+                <select id="workStatus" required>
+                    <option value="Pendiente">Pendiente</option>
+                    <option value="Completado">Completado</option>
+                    <option value="Cancelado">Cancelado</option>
+                </select>
                 <button type="submit">Agendar</button>
             </form>
         </div>
         <div id="pedidos" class="tab-content">
             <h2>Gestionar Pedidos</h2>
-            <h2>Trabajos Agendados</h2>
             <ul id="workList"></ul>
-            <h2>Pedidos Completados</h2>
-            <ul id="completedOrders"></ul>
-            <h2>Estado de Pedidos</h2>
-            <form id="orderStatusForm">
-                <select id="orderStatus" required>
-                    <option value="Nuevo">Nuevo</option>
-                    <option value="Pendiente">Pendiente</option>
-                    <option value="Completado">Completado</option>
-                </select>
-                <button type="submit">Actualizar Estado</button>
-            </form>
         </div>
     </div>
     <script src="app.js"></script>
