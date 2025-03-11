@@ -1,9 +1,11 @@
 document.addEventListener('DOMContentLoaded', function () {
+    // Open the default tab
     const defaultTab = document.querySelector('.tab-link[data-tab="inicio"]');
     if (defaultTab) {
         openTab({ currentTarget: defaultTab }, 'inicio');
     }
 
+    // Form submission for new client
     document.getElementById('clientForm').addEventListener('submit', function (event) {
         event.preventDefault();
         const name = document.getElementById('clientName').value;
@@ -16,6 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
         this.reset();
     });
 
+    // Form submission for scheduling work
     document.getElementById('scheduleForm').addEventListener('submit', function (event) {
         event.preventDefault();
         const description = document.getElementById('workDescription').value;
@@ -30,16 +33,19 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function openTab(event, tabName) {
+    // Hide all tab contents
     const tabContents = document.querySelectorAll('.tab-content');
     tabContents.forEach(tabContent => {
         tabContent.classList.remove('active');
     });
 
+    // Remove active class from all tab links
     const tabLinks = document.querySelectorAll('.tab-link');
     tabLinks.forEach(tabLink => {
         tabLink.classList.remove('active');
     });
 
+    // Show the current tab and add active class to the clicked tab link
     document.getElementById(tabName).classList.add('active');
     event.currentTarget.classList.add('active');
 }
